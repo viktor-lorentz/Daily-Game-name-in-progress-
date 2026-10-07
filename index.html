@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <title>Ballpark — the daily calibration game</title>
+    <meta
+      name="description"
+      content="Ballpark is a free daily game of educated guesses. Don't name the number — box it. Set your confidence range on five questions and find out how sharp your instincts really are."
+    />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ballpark — the daily calibration game" />
+    <meta
+      property="og:description"
+      content="Don't guess the number. Box it. A new five-question puzzle every day."
+    />
+    <meta property="og:image" content="/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Avoid a flash of the wrong theme before React mounts -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("ballpark.theme");
+          var dark = t ? t === "dark" : true;
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

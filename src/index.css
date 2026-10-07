@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme (default). The .dark class — set on <html> before paint — swaps
+   every token below, so the whole UI re-themes from one place. */
+:root {
+  --bg: 246 248 250;
+  --surface: 255 255 255;
+  --surface-2: 240 243 247;
+  --border: 221 227 234;
+  --text: 15 23 42;
+  --muted: 100 116 139;
+  --accent: 5 150 105;
+  --accent-2: 8 145 178;
+  --truth: 217 119 6;
+  --hit: 5 150 105;
+  --miss: 220 38 38;
+}
+
+.dark {
+  --bg: 11 15 20;
+  --surface: 18 24 33;
+  --surface-2: 26 34 46;
+  --border: 38 48 62;
+  --text: 230 237 243;
+  --muted: 138 151 166;
+  --accent: 52 211 153;
+  --accent-2: 34 211 238;
+  --truth: 251 191 36;
+  --hit: 52 211 153;
+  --miss: 248 113 113;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    min-height: 100dvh;
+    overscroll-behavior-y: none;
+  }
+
+  /* Consistent, keyboard-visible focus ring. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--bg));
+  }
+
+  /* Tabular figures everywhere numbers animate or align. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl
+      px-4 py-2.5 text-sm font-semibold transition-all
+      active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-bg hover:brightness-110 shadow-glow;
+  }
+
+  .btn-ghost {
+    @apply btn border border-border bg-surface-2 text-text hover:border-accent/50;
+  }
+
+  .icon-btn {
+    @apply grid h-10 w-10 place-items-center rounded-xl text-muted
+      transition-colors hover:bg-surface-2 hover:text-text;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border
+      bg-surface-2 px-3 py-1 text-xs font-medium text-muted;
+  }
+}
+
+/* Respect users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Thin, themed scrollbars for the archive / modals. */
+.scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border)) transparent;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
