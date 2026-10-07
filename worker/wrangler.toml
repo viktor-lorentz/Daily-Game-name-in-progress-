@@ -1,0 +1,16 @@
+name = "ballpark-api"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+# D1 database binding. Create the DB with:
+#   npx wrangler d1 create ballpark
+# then paste the printed database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "ballpark"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[vars]
+# Restrict to your site's origin in production, e.g. "https://ballpark.pages.dev".
+# Leave as "*" to allow any origin.
+ALLOW_ORIGIN = "*"
