@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b0f14"/>
+      <stop offset="1" stop-color="#0f1620"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#34d399"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- logo mark -->
+  <g transform="translate(96, 120)">
+    <rect x="0" y="36" width="150" height="10" rx="5" fill="#1f2a37"/>
+    <rect x="40" y="18" width="78" height="46" rx="12" fill="none" stroke="#34d399" stroke-width="8"/>
+    <circle cx="79" cy="41" r="12" fill="#fbbf24"/>
+    <line x1="79" y1="-8" x2="79" y2="30" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="96" y="340" font-family="Space Grotesk, sans-serif" font-size="140" font-weight="700" fill="#e6edf3">Ballpark</text>
+  <text x="100" y="420" font-family="Inter, sans-serif" font-size="46" font-weight="500" fill="#8a97a6">Don&#39;t guess the number. Box it.</text>
+
+  <!-- emoji result strip -->
+  <g transform="translate(100, 470)">
+    <rect x="0" y="0" width="70" height="70" rx="14" fill="#fbbf24"/>
+    <rect x="86" y="0" width="70" height="70" rx="14" fill="#34d399"/>
+    <rect x="172" y="0" width="70" height="70" rx="14" fill="#34d399"/>
+    <rect x="258" y="0" width="70" height="70" rx="14" fill="#eab308"/>
+    <rect x="344" y="0" width="70" height="70" rx="14" fill="#374151"/>
+  </g>
+
+  <text x="1104" y="560" text-anchor="end" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#4b5563">A new puzzle every day at 00:00 UTC</text>
+</svg>
